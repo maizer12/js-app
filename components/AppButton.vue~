@@ -1,0 +1,49 @@
+<script setup lang="ts">
+interface Props {
+  label: string
+  variant?: "primary" | "secondary" | "danger"
+  size?: "sm" | "md"
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  variant: "primary"
+})
+
+const buttonVariant = computed(() => {
+  switch (props.variant) {
+    case "primary":
+      return "bg-yellow-500 text-black hover:bg-yellow-400";
+    case "secondary":
+      return "bg-gray-500 text-white hover:bg-gray-400";
+    case "danger":
+      return "bg-red-500 text-white hover:bg-red-400";
+  }
+})
+
+const buttonSize = computed(() => {
+  switch (props.size) {
+    case "sm":
+      return "px-4 py-2 text-xs";
+    case "md":
+      return "px-6 py-3 text-base";
+  }
+})
+
+const buttonClass = computed(() => {
+  return `${buttonVariant.value} ${buttonSize.value}`
+})
+</script>
+
+<template>
+  <button
+      class="px-4 py-2 rounded-lg flex items-center gap-2"
+      :class="buttonClass"
+  >
+    <i class="pi pi-sign-out"/>
+    {{ label }}
+  </button>
+</template>
+
+<style scoped>
+
+</style>
