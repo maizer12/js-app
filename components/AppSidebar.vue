@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const navigation = [
-  { name: 'Dashboard', icon: "pi pi-home", view: 'dashboard' },
-  { name: 'Interview Questions', icon: "pi pi-question", view: 'interview-questions' },
-  { name: 'Lessons', icon: "pi pi-book", view: 'lessons' },
-  { name: 'Practice', icon: "pi pi-code", view: 'practice' },
-  { name: 'Achievements', icon: "pi pi-star", view: 'achievements' },
+  { name: 'Dashboard', icon: "pi pi-home", view: '' },
+  // { name: 'Interview Questions', icon: "pi pi-question", view: 'interview-questions' },
+  // { name: 'Lessons', icon: "pi pi-book", view: 'lessons' },
+  // { name: 'Practice', icon: "pi pi-code", view: 'practice' },
+  // { name: 'Achievements', icon: "pi pi-star", view: 'achievements' },
 ]
 </script>
 

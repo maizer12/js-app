@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@nuxtjs/tailwindcss', ['@nuxtjs/google-fonts', {
+  modules: ['@pinia/nuxt', "@prisma/nuxt", '@pinia-plugin-persistedstate/nuxt', '@nuxtjs/tailwindcss', ['@nuxtjs/google-fonts', {
     families: {
       Montserrat: [100, 200, 300, 400, 500, 600, 700, 800, 900]
     }

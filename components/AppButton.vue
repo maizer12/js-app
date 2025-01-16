@@ -1,8 +1,11 @@
 <script setup lang="ts">
+
 interface Props {
   label: string
+  icon?: string
   variant?: "primary" | "secondary" | "danger"
   size?: "sm" | "md"
+  to?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -32,16 +35,26 @@ const buttonSize = computed(() => {
 const buttonClass = computed(() => {
   return `${buttonVariant.value} ${buttonSize.value}`
 })
+
+const component = computed(() => {
+  if (props.to) return defineNuxtLink({})
+  return 'button'
+})
 </script>
 
 <template>
-  <button
+  <Component
+      :is="component"
+      :to="to"
       class="px-4 py-2 rounded-lg flex items-center gap-2"
       :class="buttonClass"
   >
-    <i class="pi pi-sign-out"/>
+    <i
+      v-if="icon"
+      :class="icon"
+    />
     {{ label }}
-  </button>
+  </Component>
 </template>
 
 <style scoped>

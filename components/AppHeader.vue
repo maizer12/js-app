@@ -15,6 +15,7 @@
         </div>
         <AppButton
             label="Logout"
+            to="/login"
             variant="danger"
             size="sm"
         />
